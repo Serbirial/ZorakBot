@@ -386,7 +386,7 @@ def embed_spammer(message_to_report):
     return embed
 
 
-def embed_spammer_warn(channel1, channel2):
+def embed_spammer_warn(channel1):
     """
     Embedding warn for detected spam messages.
     """
@@ -396,7 +396,7 @@ def embed_spammer_warn(channel1, channel2):
         , color=discord.Color.red()
         , timestamp=datetime.utcnow()
     )
-    report = f"Detected the same message in {channel1.mention} and {channel2.mention}"
+    report = f"Detected the same message in {channel1.mention}"
     embed.add_field(name="What happened?", value=report, inline=True)
     embed.add_field(
         name="What should you do?"
