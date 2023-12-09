@@ -128,6 +128,7 @@ class ModerationSpamMessages(commands.Cog):
 			if message.author.id == member.id:
 				temp.append(message.content.lower())
 		most_common = find_most_common(temp)
+		del temp
 		occurances = temp.count(most_common)
 		if occurances > ANTISPAM_COUNTER_LIMIT: # if repeating messages sent > limit: add to counter
 			add_counter(member.id)
